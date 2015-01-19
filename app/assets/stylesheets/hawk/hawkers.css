@@ -1,0 +1,146 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+hawker {
+  clear: both;
+  position: relative;
+  width: 100%;
+  z-index: 999;
+  font-family: arial;
+  font-size: 15px !important;
+}
+hawker div#hawker_container {
+  background-color: #D3D3D3 !important;
+  border: 1px solid #000000;
+  width: 100%;
+}
+hawker  #hawker_notice {
+  background: none repeat scroll 0 0 #FFFFFF;
+  color: #008000;
+  display: block;
+  padding: 10px;
+  /*display: none;*/
+}
+
+hawker input[type="text"] {
+  color: #000000 !important;
+  font-size: 15px !important;
+}
+hawker .generate_xpath {
+  background-color: #ADD8E6 !important;
+  border: medium outset;
+  color: #000000;
+  font-size: 13px;
+  margin-left: 5px;
+}
+hawker table td span.xpath_message {
+  color: #FF0000;
+  font-size: 11px;
+}
+hawker a#hawker_head_text_link {
+  font-size: 20px;
+  text-decoration: none;
+}
+hawker table#hawker_index_table tbody tr:hover {
+  background-color: #ADD8E6 !important;
+}
+hawker table#hawker_xpath_table_container, hawker table#hawker_index_table {
+  border: 1px solid #000000 !important;
+  border-collapse: collapse;
+}
+hawker table td {
+  border: 1px solid #BECDDF !important;
+  line-height: 16px !important;
+  padding: 8px !important;
+}
+hawker  div#hawker_header,hawker table thead {
+  background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 44%, #D7DEE8 100%) no-repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+  border: 1px solid #BECDDF;
+  color: #2067B3 !important;
+  padding: 0.7em;
+  text-align: center !important;
+}
+hawker div#hawker_head_button {
+  clear: both;
+  height: 40px;
+  padding-right: 10px;
+}
+hawker div#hawker_head_button a.create_hawker {
+  background-image: url("/assets/hawk/new_icon.png");
+  border: medium none;
+  height: 30px;
+  margin-left: 10px;
+  width: 30px;
+  float: right !important;
+}
+hawker .xpath_class{
+  width: 400px;
+}
+hawker div#hawker_error_explanation {
+    color: #FF0000;
+    font-size: 12px;
+}
+hawker .delete_hawker{
+  background: url("/assets/hawk/delete_img.jpg");
+  width: 20px;
+  height: 20px;
+  border: 1px solid;
+  cursor: pointer;
+}
+hawker #hawker_url_field_row div{
+  float: left;
+}
+hawker #hawker_url_field_row span{
+  position: relative;
+  top: 5px;
+}
+hawker #hawker_pagination {
+  border: 1px solid #808080;
+  height: 20px;
+  text-align: center;
+  width: 100%;
+}
+table#hawker_xpath_table_container tr th {
+    min-width: 100px;
+}
+hawker a,hawker a:visited,hawker a:hover,hawker a:active {
+  color: inherit;
+}
+
+hawker #add_xpath_row_icon {
+  background-image: url("/assets/hawk/add_icon.png");
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+  float: right;
+}
+hawker #save_xpath_icon {
+  background-image: url("/assets/hawk/save_icon.png");
+  border: medium none;
+  cursor: pointer;
+  height: 25px;
+  margin-left: 10px;
+  width: 25px;
+  float: right;
+}
+hawker #show_hawker_icon {
+  background-image: url("/assets/hawk/show_icon.png");
+  border: medium none;
+  height: 20px;
+  margin-left: -4px;
+  margin-top: -10px;
+  position: absolute;
+  width: 20px;
+}
+hawker #edit_hawker_icon {
+  background-image: url("/assets/hawk/edit_icon.png");
+  border: medium none;
+  height: 20px;
+  margin-left: -4px;
+  margin-top: -10px;
+  position: absolute;
+  width: 20px;
+}
+
+

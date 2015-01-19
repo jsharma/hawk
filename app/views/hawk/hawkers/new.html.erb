@@ -1,0 +1,29 @@
+<hawker>
+  <div id="hawker_container">
+    <div id="hawker_header">
+      <%= link_to 'Xpath Hawker', hawkers_path, :id=>'hawker_head_text_link' %>
+    </div>
+
+		<%= form_for(@hawker) do |f| %>
+		  <fieldset style="width:250" align="center"><legend>Create New Hawker</legend>
+		    <div class="form-group">
+	        <div id="hawker_error_explanation">
+            <%if @hawker.errors.any? %>
+  	          <ul>
+  		          <% @hawker.errors.full_messages.each do |msg| %>
+  		            <li><%= msg %></li>
+  		          <% end %>
+              </ul>
+            <% end %>
+          </div>
+
+          <div id="hawker_url_field_row">
+            <div><span>Url&nbsp;</span></div>
+            <div><%= f.text_field :url %></div>
+            <div><%= f.submit "Create hawk", :style=>"background-color: #ADD8E6;", :onclick => "return Hawk.validateBlankUrl();" %></div>
+          </div>
+		    </div>
+		  </fieldset>
+		<% end %>
+	</div>
+</hawker>	

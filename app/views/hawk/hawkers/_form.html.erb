@@ -1,0 +1,54 @@
+<hawker>
+  <base href="<%= @url %>">
+  <div id="hawker_container">
+    <div id="hawker_header">
+      <%= link_to 'Xpath Hawker', hawkers_url, :id=>'hawker_head_text_link' %>
+    </div>
+    <%= form_for(@hawker, :url=>create_update_xpath_hawker_url(@hawker), :method =>'post', :html=>{ :onsubmit => "return Hawk.validateBlankFields()"}) do |f| %>
+      <div id="hawker_head_button">
+        <input type="hidden" id="hawker_id" value="<%= @hawker.id %>">
+        <%= f.submit "Save", :value => "", :id => "save_xpath_icon" %>
+        <div id="add_xpath_row_icon" onclick="Hawk.addXpathRow();"> </div>
+        <!-- <input type="button" value="Add Row" onclick="Hawk.addXpathRow();"> -->
+      </div>
+      <% if flash[:notice] %>
+        <p id="hawker_notice"><%= flash[:notice] %></p>
+      <% end %>
+      <%if @hawker.errors.any? %>
+        <div id="hawker_error_explanation">
+          <h2><%= pluralize(@hawker.errors.count, "error") %> prohibited this hawker from being saved:</h2>
+          <ul>
+          <% @hawker.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div id="hawker_middle_content">
+        <table id="hawker_xpath_table_container">
+          <thead> 
+            <th> Xpath Name </th>
+            <th> Xpath </th>
+            <th> </th>
+          </thead>
+          <tbody id="hawker_xpath_row_container">
+            <%@hawker.xpaths.each do |path| %>
+              <tr id="xpath_tr_row_<%= path.id %>">
+                <td><%= text_field_tag "xpath[#{path.id}][name]", path.targate_name, :class=> "xpath_targate_name" %></td>
+                <td><%= text_field_tag "xpath[#{path.id}][xpath]", path.xpath, :id=>"hawker_xpath_#{path.id}", :class=>'xpath_class' %></td>
+                <td>
+                  <input type="button" value="Generate" id='hawker_generate_<%= path.id %>' class="generate_xpath" onclick='Hawk.generateXpath(this);'/><span class="xpath_message" id="hawker_message_<%= path.id%>">
+                  </span>
+                </td>
+                <td><div class="delete_hawker" onclick="Hawk.deleteXpath('xpath_tr_row_<%= path.id %>','<%= delete_xpath_hawker_url(path.id) %>')">&nbsp;</div></td>
+              </tr>
+            <%end%>
+          </tbody>
+        </table>
+      </div>
+    <%end%>
+  </div>
+  <hr>
+</hawker>
+
+<%= @page_content.html_safe %>

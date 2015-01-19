@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hawk</title>
+    <%= stylesheet_link_tag    "hawk/application", :media => "all" %>
+    <%= javascript_include_tag "hawk/application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= yield %>
+  </body>
+</html>

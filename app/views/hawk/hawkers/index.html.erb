@@ -1,0 +1,37 @@
+<hawker>
+  <div id="hawker_container">
+    <div id="hawker_header">
+      <%= link_to 'Xpath Hawker', hawkers_path, :id=>'hawker_head_text_link' %>
+    </div>
+    <h1>Listing hawkers</h1>
+    <div id="hawker_head_button">
+      <%= link_to '', new_hawker_path, :class=> "create_hawker" %>
+    </div>
+
+    <div id="hawker_middle_content">
+      <table id="hawker_index_table">
+        <thead> 
+          <tr>
+            <th width="91%" float>URL</th>
+            <th width="9%" colspan="3">Action</th>
+          </tr>
+        </thead>
+        <tbody id="hawker_xpath_row_container">
+          <% unless @hawkers.blank? %>
+            <% @hawkers.each do |hawker| %>
+              <tr>
+                <td width="91%"><%= hawker.url %></td>
+                <td width="3%"><%= link_to '', hawker, :id => "show_hawker_icon"%></td>
+                <td width="3%"><%= link_to '', edit_hawker_path(hawker), :id => "edit_hawker_icon" %></td>
+                <td width="3%"><%= button_to "", hawker, :method=>:delete, :class=> "delete_hawker", :onclick => "return confirm('Are you sure to delete this record?')" %></td>
+              </tr>
+            <% end %>
+          <%else%>
+            No record found...
+          <%end%>
+        </tbody>
+      </table>
+    </div>
+    <div id="hawker_pagination" ><%= will_paginate @posts %></div>      
+  </div>
+</hawker>
